@@ -1,0 +1,72 @@
+<?php
+/*
+ * @author    Tigren Solutions <info@tigren.com>
+ * @copyright  Copyright (c)  2023.  Tigren Solutions <https://www.tigren.com>. All rights reserved.
+ * @license   Open Software License ("OSL") v. 3.0
+ */
+
+/** @var AddCartFail $block */
+
+use Tigren\AdvancedCheckout\Block\Product\AddCartFail;
+
+$url = $block->getUrl('advancedCheckout/Cart/ClearCart'); ?>
+
+<script type="text/javascript">
+
+    require([
+        'jquery',
+        'jquery/jquery.cookie',
+        'Magento_Ui/js/modal/alert',
+        'Magento_Ui/js/modal/confirm',
+        'jquery/ui'
+    ], function ($, alert, confirmation) {
+
+        'use strict';
+
+        $(document).ready(function () {
+            customConfirmation();
+        });
+
+        function customConfirmation() {
+            if ($.cookie('redirect_triggered') === '1') {
+                confirmation({
+                    title: $.mage.__('Please choose an option'),
+                    buttons: [
+                        {
+                            text: $.mage.__('Process to checkout'),
+                            class: 'action new',
+                            click: function (event) {
+                                this.closeModal(event);
+                                window.location.href = '/checkout/';
+                            }
+                        },
+                        {
+                            text: $.mage.__('Clear cart'),
+                            class: 'action new',
+                            click: function (event) {
+                                this.closeModal(event);
+                                $.ajax({
+                                    showLoader: true,
+                                    url: '<?= $url ?>',
+                                    data: {},
+                                    type: 'POST',
+                                    success: function (data) {
+                                    },
+                                    error: function (error) {
+                                    }
+                                });
+                            }
+                        }
+                    ]
+                });
+                $.removeCookie('redirect_triggered');
+            }
+
+            $.removeCookie('redirect_triggered');
+        }
+    });
+
+</script>
+
+
+
