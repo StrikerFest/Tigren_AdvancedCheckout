@@ -8,4 +8,7 @@
     <type name="Magento\Sales\Api\OrderManagementInterface">
         <plugin name="tigren_advanced_checkout_check_order" type="Tigren\AdvancedCheckout\Plugin\CheckOrder" sortOrder="10"  />
     </type>
+    <type name="Magento\Sales\Api\OrderManagementInterface">
+        <plugin name="tigren_advanced_checkout_guest_to_customer" type="Tigren\AdvancedCheckout\Plugin\GuestToCustomer" sortOrder="10"  />
+    </type>
 </config>
