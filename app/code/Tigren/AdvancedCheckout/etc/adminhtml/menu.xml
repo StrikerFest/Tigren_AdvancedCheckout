@@ -1,0 +1,23 @@
+<!--
+  ~ @author    Tigren Solutions <info@tigren.com>
+  ~ @copyright  Copyright (c)  2023.  Tigren Solutions <https://www.tigren.com>. All rights reserved.
+  ~ @license   Open Software License ("OSL") v. 3.0
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Tigren_AdvancedCheckout::advanced_checkout_tab"
+             title="Advanced Checkout Admin"
+             module="Tigren_Faq"
+             sortOrder="10"
+             resource="Tigren_AdvancedCheckout::advanced_checkout_tab" />
+        <add
+            id="Tigren_AdvancedCheckout::config"
+            title="Configuration"
+            module="Tigren_AdvancedCheckout"
+            sortOrder="50"
+            parent="Tigren_AdvancedCheckout::advanced_checkout_tab"
+            action="adminhtml/system_config/edit/section/advanced_checkout_section"
+            resource="Tigren_AdvancedCheckout::config" />
+    </menu>
+</config>

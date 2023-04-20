@@ -2,6 +2,7 @@
     "name": "tigren/module-advancedcheckout",
     "description": "Tigren advanced checkout module",
     "type": "magento2-module",
+    "version": "1.0.0",
     "license": "OSL-3.0",
     "authors": [
         {
