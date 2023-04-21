@@ -45,7 +45,7 @@ class DatePickerList extends AbstractFieldArray
         }
         $rowId = $row['_id'];
         try {
-            $sourceDate = $row[$key][$key];
+            $sourceDate = $row[$key];
             $renderedDate = $sourceDate;
             $row[$key] = $renderedDate;
             $columnValues = $row['column_values'];
@@ -70,7 +70,7 @@ class DatePickerList extends AbstractFieldArray
                 $(function(){
                     function bindDatePicker() {
                         setTimeout(function() {
-                            $('.js-date-excluded-datepicker').datepicker( { dateFormat: 'dd/mm/yy' } );
+                            $('.js-date-excluded-datepicker').datepicker( { dateFormat: 'dd-mm-yy' } );
                                     }, 50);
                     }
 

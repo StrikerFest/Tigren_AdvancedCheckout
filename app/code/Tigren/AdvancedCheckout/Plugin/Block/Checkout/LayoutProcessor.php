@@ -58,7 +58,7 @@ class LayoutProcessor
     private function processDeliveryDateAddress(string $dataScopePrefix): array
     {
         return [
-            'component' => 'Magento_Ui/js/form/element/date',
+            'component' => 'Tigren_AdvancedCheckout/js/custom-date',
             'config' => [
                 'customScope' => $dataScopePrefix . '.custom_attributes',
                 'customEntry' => null,
@@ -66,7 +66,9 @@ class LayoutProcessor
                 'elementTmpl' => 'ui/form/element/date',
                 'id' => 'delivery_date',
                 'options' => [
-                    'dateFormat' => 'y-MM-dd'
+                    'dateFormat' => 'y-MM-dd',
+                    'minDate' => 'new Date()', // Disable days before today
+
                 ]
             ],
             'dataScope' => $dataScopePrefix . '.custom_attributes.delivery_date',

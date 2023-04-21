@@ -36,9 +36,8 @@ class DatePickerList extends ArraySerialized
                 continue;
             }
             try {
-                $date = DateTime::createFromFormat('d/m/Y', $data['date']);
                 $value[$key] = [
-                    'date' => $date,
+                    'date' => $data['date'],
                 ];
             } catch (Exception $e) {
             }

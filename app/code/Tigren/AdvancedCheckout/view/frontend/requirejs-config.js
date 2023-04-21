@@ -8,7 +8,7 @@ var config = {
         mixins: {
             'Magento_Checkout/js/action/set-shipping-information': {
                 'Tigren_AdvancedCheckout/js/action/set-shipping-information-mixin': true
-            }
+            },
         }
     }
 };

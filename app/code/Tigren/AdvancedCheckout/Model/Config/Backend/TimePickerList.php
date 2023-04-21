@@ -11,6 +11,8 @@ namespace Tigren\AdvancedCheckout\Model\Config\Backend;
 use DateTime;
 use Exception;
 use Magento\Config\Model\Config\Backend\Serialized\ArraySerialized;
+use Magento\Framework\Exception\LocalizedException;
+use Magento\Framework\Message\ManagerInterface as MessageManagerInterface;
 
 /**
  * Class TimePickerList
@@ -19,12 +21,12 @@ use Magento\Config\Model\Config\Backend\Serialized\ArraySerialized;
  */
 class TimePickerList extends ArraySerialized
 {
+
     /**
-     * On save convert front value format like "20/04/2023" to backend format "2023-04-20"
      *
-     * @return $this
+     * @return $this|null
      */
-    public function beforeSave(): static
+    public function beforeSave(): ?static
     {
         $value = [];
         $values = $this->getValue();
@@ -36,14 +38,16 @@ class TimePickerList extends ArraySerialized
                 continue;
             }
             try {
-//                $time = DateTime::createFromFormat('H:i:s', $data['time']);
                 $start_time = $data['start_time'];
                 $end_time = $data['end_time'];
+                if ($start_time >= $end_time) {
+                    throw new LocalizedException(__('Start time cannot be greater than or equal to end time.'));
+                }
                 $value[$key] = [
                     'start_time' => $start_time,
                     'end_time' => $end_time,
                 ];
-            } catch (Exception $e) {
+            } catch (LocalizedException $e) {
             }
         }
         $this->setValue($value);
