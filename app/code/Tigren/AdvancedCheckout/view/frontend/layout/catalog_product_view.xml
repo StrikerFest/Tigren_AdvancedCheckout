@@ -4,11 +4,13 @@
   ~ @copyright  Copyright (c)  2023.  Tigren Solutions <https://www.tigren.com>. All rights reserved.
   ~ @license   Open Software License ("OSL") v. 3.0
   -->
-
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="product.info.main">
-            <block class="Tigren\AdvancedCheckout\Block\Product\AddCartFail" name="product.addCartFail" template="Tigren_AdvancedCheckout::product/addCartFail.phtml" />
+            <block
+                class="Tigren\AdvancedCheckout\Block\Product\AddCartFail"
+                name="product.addCartFail"
+                template="Tigren_AdvancedCheckout::product/addCartFail.phtml" />
         </referenceBlock>
     </body>
 </page>

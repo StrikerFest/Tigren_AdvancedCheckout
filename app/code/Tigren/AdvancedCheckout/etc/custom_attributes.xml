@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+  ~ @author    Tigren Solutions <info@tigren.com>
+  ~ @copyright  Copyright (c)  2023.  Tigren Solutions <https://www.tigren.com>. All rights reserved.
+  ~ @license   Open Software License ("OSL") v. 3.0
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/custom_attributes.xsd">
+    <custom_attributes for="Magento\Quote\Api\Data\AddressInterface">
+        <attribute code="delivery_date" type="string"/>
+    </custom_attributes>
+    <custom_attributes for="Magento\Sales\Api\Data\OrderAddressInterface">
+        <attribute code="delivery_date" type="string"/>
+    </custom_attributes>
+
+    <custom_attributes for="Magento\Quote\Api\Data\AddressInterface">
+        <attribute code="delivery_time" type="string"/>
+    </custom_attributes>
+    <custom_attributes for="Magento\Sales\Api\Data\OrderAddressInterface">
+        <attribute code="delivery_time" type="string"/>
+    </custom_attributes>
+
+</config>

@@ -29,21 +29,20 @@
             <resource>Tigren_AdvancedCheckout::config_delivery</resource>
             <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>General Settings</label>
-                <field id="delivery_start_time" translate="label" type="time" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="40">
-                    <label>Opening Time</label>
-                </field>
-                <field id="delivery_end_time" translate="label" type="time" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="40">
-                    <label>End Time</label>
-                </field>
                 <field id="delivery_day_off" translate="label" type="multiselect" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>My Date Field</label>
+                    <label>Day off</label>
                     <source_model>Tigren\AdvancedCheckout\Model\Config\Source\DaysOfWeek</source_model>
                 </field>
-                <field id="delivery_date_off" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Exclude Dates from Shipping Date Calculation</label>
+                <field id="delivery_date_off" translate="label" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Date off</label>
                     <comment>These dates will be excluded from shipping date calculation</comment>
                     <backend_model>Tigren\AdvancedCheckout\Model\Config\Backend\DatePickerList</backend_model>
                     <frontend_model>Tigren\AdvancedCheckout\Block\Adminhtml\Form\Field\DatePickerList</frontend_model>
+                </field>
+                <field id="delivery_time_frame" translate="label" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Delivery time frame</label>
+                    <backend_model>Tigren\AdvancedCheckout\Model\Config\Backend\TimePickerList</backend_model>
+                    <frontend_model>Tigren\AdvancedCheckout\Block\Adminhtml\Form\Field\TimePickerList</frontend_model>
                 </field>
             </group>
         </section>

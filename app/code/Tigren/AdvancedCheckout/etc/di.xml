@@ -7,11 +7,18 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Sales\Api\OrderManagementInterface">
         <plugin name="tigren_advanced_checkout_check_order" type="Tigren\AdvancedCheckout\Plugin\CheckOrder" sortOrder="10"  />
-    </type>
-    <type name="Magento\Sales\Api\OrderManagementInterface">
         <plugin name="tigren_advanced_checkout_guest_to_customer" type="Tigren\AdvancedCheckout\Plugin\GuestToCustomer" sortOrder="10"  />
     </type>
+
     <preference for="Tigren\AdvancedCheckout\Api\CustomerLoginInterface"
                 type="Tigren\AdvancedCheckout\Api\CustomerLogin"
     />
+
+    <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
+        <plugin name="tigren_advanced_checkout_process_js_layout_of_block_after" type="Tigren\AdvancedCheckout\Plugin\Block\Checkout\LayoutProcessor"/>
+    </type>
+
+    <type name="Magento\Checkout\Model\ShippingInformationManagement">
+        <plugin name="tigren_advanced_checkout_before_save_address_information" type="Tigren\AdvancedCheckout\Plugin\Checkout\Model\ShippingInformationManagement" sortOrder="1"/>
+    </type>
 </config>

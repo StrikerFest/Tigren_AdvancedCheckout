@@ -9,4 +9,8 @@
     <event name="checkout_cart_product_add_before">
         <observer name="add_to_cart" instance="Tigren\AdvancedCheckout\Observer\AddToCart" />
     </event>
+
+    <event name="checkout_submit_all_after">
+        <observer name="tigren_advanced_checkout_checkout_submit_all_after" instance="Tigren\AdvancedCheckout\Observer\CheckoutSubmitAllAfterObserver"/>
+    </event>
 </config>
