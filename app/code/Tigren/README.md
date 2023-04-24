@@ -1,6 +1,21 @@
+# Table of Contents
+
+1. [Exercise 1](#exercise-1)
+   1. [Create a new product attribute and name it "Allow multi-order"](#create-a-new-product-attribute-and-name-it-allow-multi-order)
+   2. [When customer click adds to cart](#when-customer-click-adds-to-cart) 
+      1. [Case 1: If allow_multi_order is No, and existing product is in the cart](#case-1-if-allowmultiorder-is-no-and-existing-product-is-in-the-cart)
+      2. [Case 2: If allow_multi_order is No, and Cart is empty](#case-2-if-allowmultiorder-is-no-and-cart-is-empty)
+      3. [Case 3: If allow_multi_order is Yes](#case-3-if-allowmultiorder-is-yes)
+   3. [When customer place order when they have pending order](#when-customer-place-order-when-they-have-pending-order)
+   4. [When guest create an order. Create a customer account with the shipping address in the filled form](#when-guest-create-an-order-create-a-customer-account-with-the-shipping-address-in-the-filled-form)
+   5. [Third party needs a rest API to support customer  login in the Magento system. Create a new rest API to support](#third-party-needs-a-rest-api-to-support-customer--login-in-the-magento-system-create-a-new-rest-api-to-support)
+2. [Exercise 2](#exercise-2)
+   1. [Backend configuration](#backend-configuration)
+   2. [Frontend Interaction](#frontend-interaction)
+
 # Exercise 1:
 
-## Create a  new product attribute and name it "Allow multi-order"
+## Create a new product attribute and name it "Allow multi-order"
 
 - Create
 
@@ -93,5 +108,6 @@
 #### Backend detail
 
 ![image](https://user-images.githubusercontent.com/72716233/233888988-bfa52f44-3b29-48f5-856d-b5a40552ed85.png)
+
 
 
